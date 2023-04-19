@@ -9,7 +9,8 @@ title: John Bryant
 <head>
     <script type="text/javascript">
         window.onload = function() {
-            var dps = []; //dataPoints. 
+            var dps = []; //dataPoints.
+            var ds = []; //dataPoints.
 
             var chart = new CanvasJS.Chart("chartContainer", {
                 title: {
@@ -18,16 +19,22 @@ title: John Bryant
                 data: [{
                     type: "line",
                     dataPoints: dps
-                }]
+                },{type: "line",
+                    dataPoints: ds}]
             });
 
             function addDataPointsAndRender() {
-                xValue = Number(document.getElementById("xValue").value);
-                yValue = Number(document.getElementById("yValue").value);
+                tip_cost = Number(document.getElementById("tip_cost").value);
+                students = Number(document.getElementById("students").value);
+                tips_per_day = Number(document.getElementById("tips_per_day").value);
+                days_per_week_inlab = Number(document.getElementById("days_per_week_in_lab").value);
+                weeks_per_year_inlab = Number(document.getElementById("weeks_per_year_in_lab").value);
+
+
+                dps.push({x: 1,y: 1*(tip_cost+students+tips_per_day+days_per_week+weeks_per_year)},{x: 2,y: 2*(tip_cost+students+tips_per_day+days_per_week+weeks_per_year)},{x: 3,y: 3*(tip_cost+students+tips_per_day+days_per_week+weeks_per_year)},{x: 4,y: 4*(tip_cost+students+tips_per_day+days_per_week+weeks_per_year)},{x: 5,y: 5*(tip_cost+students+tips_per_day+days_per_week+weeks_per_year)},{x: 6,y: 6*(tip_cost+students+tips_per_day+days_per_week+weeks_per_year)},{x: 7,y: 7*(tip_cost+students+tips_per_day+days_per_week+weeks_per_year)});
+                chart.render();
                 
-                factor = document.getElementById("result").innerHTML = xValue * yValue;
-                
-                dps.push({x: 1,y: factor},{x: 2,y: factor},{x: 3,y: factor},{x: 4,y: factor});
+                dps.push({x: 1,y: 10500+((tip_cost+students+tips_per_day+days_per_week+weeks_per_year)/4)},{x: 2,y: 10500+(2*((tip_cost+students+tips_per_day+days_per_week+weeks_per_year)/4))},{x: 3,y: 10500+(3*((tip_cost+students+tips_per_day+days_per_week+weeks_per_year)/4))},{x: 4,y: 10500+(4*((tip_cost+students+tips_per_day+days_per_week+weeks_per_year)/4))},{x: 5,y: 10500+(5*((tip_cost+students+tips_per_day+days_per_week+weeks_per_year)/4))},{x: 6,y: 10500+(6*((tip_cost+students+tips_per_day+days_per_week+weeks_per_year)/4))},{x: 7,y: 10500+(7*((tip_cost+students+tips_per_day+days_per_week+weeks_per_year)/4))});
                 chart.render();
             }
 
@@ -39,9 +46,16 @@ title: John Bryant
 </head>
 
 <body>
-    X Value:
-    <input id="xValue" type="number" step="any" placeholder="Enter X-Value"> Y Value:
-    <input id="yValue" type="number" step="any" placeholder="Enter Y-Value">
+    Tip Cost:
+    <input id="tip_cost" type="number" step="any" placeholder="0.0315"> Number Students:
+    <input id="students" type="number" step="any" placeholder="4">
+    Tips used by each student every day:
+    <input id="tips_per_day" type="number" step="any" placeholder="4"> Days each student is in the lab per week:
+    <input id="days_per_week_in_lab" type="number" step="any" placeholder="4">
+    weeks per year each student spends in lab:
+    <input id="weeks_per_year_in_lab" type="number" step="any" placeholder="40"> 
+    
+    
     <button id="renderButton">Add DataPoint & Render</button>
     <div id="chartContainer" style="height: 270px; width: 100%;">
     </div>
