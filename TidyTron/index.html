@@ -27,11 +27,6 @@ title: John Bryant
             });
 
             function addDataPointsAndRender() {
-                
-                document.getElementById('myCanvas').height = 800;
-                document.getElementById('myCanvas').width = window.innerWidth;
-                ctx.font = ctx.font.replace(match, 12);
-                
                 tip_cost = Number(document.getElementById("tip_cost").value);
                 students = Number(document.getElementById("students").value);
                 tips_per_day = Number(document.getElementById("tips_per_day").value);
@@ -43,11 +38,7 @@ title: John Bryant
                 chart.render();
                 
                 ds.push({x: 1,y: 10500+((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4)},{x: 2,y: 10500+(2*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))},{x: 3,y: 10500+(3*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))},{x: 4,y: 10500+(4*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))},{x: 5,y: 10500+(5*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))},{x: 6,y: 10500+(6*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))},{x: 7,y: 10500+(7*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))});
-                chart.render();
-                
-                
-            
-                
+                chart.render();   
             }
             
             
