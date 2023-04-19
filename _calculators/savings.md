@@ -1,7 +1,89 @@
 ---
 layout: post
-title: "Cost Savings with TidyTron"
+title: "Cash Savings on Tips with TidyTron"
 date: 2023-04-19
 ---
 
-Today I successfully set up the static IP address for the opentrons robot. Previously, the IP address would change every time it was turned on. With the new static address, it is now possible to transfer files onto the robot seamlessly using a batch script. There is also a ./clean script in the root directory of the robot itself capable of deleting any unnecessary .ipynb, .txt, .jpg, etc. This is an important step forward for making the robot user friendly for an operator.
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Cash Savings on Tips with TidyTron</title>
+</head>
+    
+<h1>Cash Savings on Tips with TidyTron</h1>
+    <p>
+     This calculator is designed to predict how long it will take for the cash saved by using TidyTron to cover the cost of the OT-2. Input tip cost, number of lab personnel, average
+        tips used every day, how many days of the week personnel work, and number of weeks per year personnel work. The Intersection of these lines represents the point when savings equal
+        initial cost of the OT-2.
+    </p>
+    
+        
+    <script type="text/javascript">
+        window.onload = function() {
+            var dps = []; //dataPoints.
+            var ds = []; //dataPoints.
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+                title: {
+                    text: "Cash savings on pipette tips with TidyTron"
+                },
+                data: [{
+                    type: "line",showInLegend: true, 
+                    name: "series1",
+                    legendText: "single-use",
+                    dataPoints: dps
+                },{type: "line",showInLegend: true, 
+                    name: "series2",
+                    legendText: "multiple-use with TidyTron",
+                    dataPoints: ds}]
+            });
+
+            function addDataPointsAndRender() {
+                OT2_cost = Number(document.getElementById("OT2_cost").value);
+                tip_cost = Number(document.getElementById("tip_cost").value);
+                students = Number(document.getElementById("students").value);
+                tips_per_day = Number(document.getElementById("tips_per_day").value);
+                days_per_week = Number(document.getElementById("days_per_week").value);
+                weeks_per_year = Number(document.getElementById("weeks_per_year").value);
+                reuses = Number(document.getElementById("reuses").value);
+
+
+                dps.push({x: 1,y: 1*(tip_cost*students*tips_per_day*days_per_week*weeks_per_year)},{x: 2,y: 2*(tip_cost*students*tips_per_day*days_per_week*weeks_per_year)},{x: 3,y: 3*(tip_cost*students*tips_per_day*days_per_week*weeks_per_year)},{x: 4,y: 4*(tip_cost*students*tips_per_day*days_per_week*weeks_per_year)},{x: 5,y: 5*(tip_cost*students*tips_per_day*days_per_week*weeks_per_year)},{x: 6,y: 6*(tip_cost*students*tips_per_day*days_per_week*weeks_per_year)},{x: 7,y: 7*(tip_cost*students*tips_per_day*days_per_week*weeks_per_year)});
+                chart.render();
+                
+                ds.push({x: 1,y: OT2_cost+((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/reuses)},{x: 2,y: OT2_cost+(2*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/reuses))},{x: 3,y: OT2_cost+(3*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/reuses))},{x: 4,y: OT2_cost+(4*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/reuses))},{x: 5,y: OT2_cost+(5*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/reuses))},{x: 6,y: OT2_cost+(6*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/reuses))},{x: 7,y: OT2_cost+(7*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/reuses))});
+                chart.render();   
+            }
+            
+            
+            
+            
+            var renderButton = document.getElementById("renderButton");
+            renderButton.addEventListener("click", addDataPointsAndRender);
+        }
+    </script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+<body>
+    Tip Cost:
+    <input id="tip_cost" type="number" step="any" placeholder="0.0315"> Number Students:
+    <input id="students" type="number" step="any" placeholder="4">
+    Tips used by each student every day:
+    <input id="tips_per_day" type="number" step="any" placeholder="192"> Days each student is in the lab per week:
+    <input id="days_per_week" type="number" step="any" placeholder="4">
+    weeks per year each student spends in lab:
+    <input id="weeks_per_year" type="number" step="any" placeholder="40"> 
+    OT-2 Cost:
+    <input id="OT2_cost" type="number" step="any" placeholder="10500">
+    Number of times tips are reused:
+    <input id="reuses" type="number" step="any" placeholder="4">
+    
+    
+    <button id="renderButton">Add DataPoint & Render</button>
+    <div id="chartContainer" style="height: 270px; width: 100%;">
+    </div>
+</body>
+
+</html>
