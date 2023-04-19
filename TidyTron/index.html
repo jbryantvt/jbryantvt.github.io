@@ -4,19 +4,19 @@ title: John Bryant
 ---
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web form</title>
-</head>
+<html>
 <body>
-    <form action="/url" method="GET">
-        <p>Please enter your first  name:</p>
-        <input type="text" name="first_name" placeholder="John">
-        <p>Please enter your last  name:</p>
-        <input type="text" name="last_name" placeholder="Doe">
-    </form>
+
+<p><input type="text" placeholder ="username" id="userinput">
+    <button id="demo">click me</button></p>
+
+    <script>
+        document.getElementById("demo").onclick = function(){
+        var user = document.getElementById("userinput").value;
+         alert(user);
+
+       }
+    </script>
+
 </body>
-</html>
+</html> 
