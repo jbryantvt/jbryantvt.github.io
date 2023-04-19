@@ -7,9 +7,7 @@ title: John Bryant
 <html>
 
 <head>
-    <script>
-    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
-    </script>
+    
         
     <script type="text/javascript">
         window.onload = function() {
@@ -41,7 +39,10 @@ title: John Bryant
                 ds.push({x: 1,y: 10500+((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4)},{x: 2,y: 10500+(2*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))},{x: 3,y: 10500+(3*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))},{x: 4,y: 10500+(4*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))},{x: 5,y: 10500+(5*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))},{x: 6,y: 10500+(6*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))},{x: 7,y: 10500+(7*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))});
                 chart.render();
             }
-
+            
+            document.getElementById('myCanvas').height = 800;
+            document.getElementById('myCanvas').width = window.innerWidth;
+            
             var renderButton = document.getElementById("renderButton");
             renderButton.addEventListener("click", addDataPointsAndRender);
         }
