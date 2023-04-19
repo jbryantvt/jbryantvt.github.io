@@ -10,8 +10,14 @@ title: John Bryant
 <p><input type="text" placeholder ="username" id="userinput">
     <button id="demo">click me</button></p>
 
-    <script>
-        document.getElementById("demo").onclick = function(){
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<script>
+    document.getElementById("demo").onclick = function(){
         var students = document.getElementById("userinput").value;
         
         
@@ -19,14 +25,8 @@ title: John Bryant
         alert(user);
 
        }
-    </script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-
-<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-
-<script>
-const xValues = [1,1,1,1,1,1* <var>students</var> ,1,1,1,1,];
+    
+const xValues = [1,1,1,1,1,1*students,1,1,1,1,];
 const yValues = [7,8,8,9,9,9,10,11,14,14,15];
 
 new Chart("myChart", {
