@@ -7,6 +7,10 @@ title: John Bryant
 <html>
 
 <head>
+    <script>
+    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+        
     <script type="text/javascript">
         window.onload = function() {
             var dps = []; //dataPoints.
@@ -14,7 +18,7 @@ title: John Bryant
 
             var chart = new CanvasJS.Chart("chartContainer", {
                 title: {
-                    text: "Accepting DataPoints from User Input"
+                    text: "Cash Savings with TidyTron"
                 },
                 data: [{
                     type: "line",
