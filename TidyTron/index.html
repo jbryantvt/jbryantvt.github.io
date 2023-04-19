@@ -12,8 +12,11 @@ title: John Bryant
 
     <script>
         document.getElementById("demo").onclick = function(){
-        var user = document.getElementById("userinput").value;
-         alert(user);
+        var students = document.getElementById("userinput").value;
+        
+        
+            
+        alert(user);
 
        }
     </script>
@@ -23,7 +26,7 @@ title: John Bryant
 <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 
 <script>
-const xValues = [50,60,70,80,90,100,110,120,130,140,150];
+const xValues = [1,1,1,1,1,1*students,1,1,1,1,];
 const yValues = [7,8,8,9,9,9,10,11,14,14,15];
 
 new Chart("myChart", {
