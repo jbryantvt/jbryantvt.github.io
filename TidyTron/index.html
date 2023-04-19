@@ -2,10 +2,19 @@
 layout: default
 title: John's Opentrons Blog
 ---
-	<h1>{{ page.title }}</h1>
-	<ul class="posts">
 
-	  {% for post in site.posts %}
-	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-	  {% endfor %}
-	</ul>
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+    		<meta charset="UTF-8">
+    		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    		<title>Web form</title>
+	</head>
+	<body>
+    		<form action="/url" method="GET">
+        		<p>Please enter your full name:</p>
+        		<input type="text" name="name" placeholder="John Doe">
+    	</form>
+	</body>
+	</html>
