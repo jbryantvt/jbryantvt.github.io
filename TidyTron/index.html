@@ -45,12 +45,13 @@ title: Cash Savings on Tips with TidyTron
                 tips_per_day = Number(document.getElementById("tips_per_day").value);
                 days_per_week = Number(document.getElementById("days_per_week").value);
                 weeks_per_year = Number(document.getElementById("weeks_per_year").value);
+                reuses = Number(document.getElementById("OT2_cost").value);
 
 
                 dps.push({x: 1,y: 1*(tip_cost*students*tips_per_day*days_per_week*weeks_per_year)},{x: 2,y: 2*(tip_cost*students*tips_per_day*days_per_week*weeks_per_year)},{x: 3,y: 3*(tip_cost*students*tips_per_day*days_per_week*weeks_per_year)},{x: 4,y: 4*(tip_cost*students*tips_per_day*days_per_week*weeks_per_year)},{x: 5,y: 5*(tip_cost*students*tips_per_day*days_per_week*weeks_per_year)},{x: 6,y: 6*(tip_cost*students*tips_per_day*days_per_week*weeks_per_year)},{x: 7,y: 7*(tip_cost*students*tips_per_day*days_per_week*weeks_per_year)});
                 chart.render();
                 
-                ds.push({x: 1,y: OT2_cost+((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4)},{x: 2,y: OT2_cost+(2*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))},{x: 3,y: OT2_cost+(3*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))},{x: 4,y: OT2_cost+(4*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))},{x: 5,y: OT2_cost+(5*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))},{x: 6,y: OT2_cost+(6*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))},{x: 7,y: OT2_cost+(7*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))});
+                ds.push({x: 1,y: OT2_cost+((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/reuses)},{x: 2,y: OT2_cost+(2*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/reuses))},{x: 3,y: OT2_cost+(3*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/reuses))},{x: 4,y: OT2_cost+(4*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/reuses))},{x: 5,y: OT2_cost+(5*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/reuses))},{x: 6,y: OT2_cost+(6*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/reuses))},{x: 7,y: OT2_cost+(7*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/reuses))});
                 chart.render();   
             }
             
@@ -75,6 +76,8 @@ title: Cash Savings on Tips with TidyTron
     <input id="weeks_per_year" type="number" step="any" placeholder="40"> 
     OT-2 Cost:
     <input id="OT2_cost" type="number" step="any" placeholder="10500">
+    Number of times tips are reused:
+    <input id="reuses" type="number" step="any" placeholder="4">
     
     
     <button id="renderButton">Add DataPoint & Render</button>
