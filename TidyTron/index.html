@@ -43,6 +43,8 @@ title: John Bryant
             document.getElementById('myCanvas').height = 800;
             document.getElementById('myCanvas').width = window.innerWidth;
             
+            ctx.font = ctx.font.replace(match, 12);
+            
             var renderButton = document.getElementById("renderButton");
             renderButton.addEventListener("click", addDataPointsAndRender);
         }
