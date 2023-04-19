@@ -26,6 +26,11 @@ title: John Bryant
             });
 
             function addDataPointsAndRender() {
+                
+                document.getElementById('myCanvas').height = 800;
+                document.getElementById('myCanvas').width = window.innerWidth;
+                ctx.font = ctx.font.replace(match, 12);
+                
                 tip_cost = Number(document.getElementById("tip_cost").value);
                 students = Number(document.getElementById("students").value);
                 tips_per_day = Number(document.getElementById("tips_per_day").value);
@@ -40,9 +45,7 @@ title: John Bryant
                 chart.render();
                 
                 
-            document.getElementById('myCanvas').height = 800;
-            document.getElementById('myCanvas').width = window.innerWidth;
-            ctx.font = ctx.font.replace(match, 12);
+            
                 
             }
             
