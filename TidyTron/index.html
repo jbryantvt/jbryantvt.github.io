@@ -31,10 +31,10 @@ title: John Bryant
                 weeks_per_year = Number(document.getElementById("weeks_per_year").value);
 
 
-                dps.push({x: 1,y: 1*(tip_cost+students+tips_per_day+days_per_week+weeks_per_year)},{x: 2,y: 2*(tip_cost+students+tips_per_day+days_per_week+weeks_per_year)},{x: 3,y: 3*(tip_cost+students+tips_per_day+days_per_week+weeks_per_year)},{x: 4,y: 4*(tip_cost+students+tips_per_day+days_per_week+weeks_per_year)},{x: 5,y: 5*(tip_cost+students+tips_per_day+days_per_week+weeks_per_year)},{x: 6,y: 6*(tip_cost+students+tips_per_day+days_per_week+weeks_per_year)},{x: 7,y: 7*(tip_cost+students+tips_per_day+days_per_week+weeks_per_year)});
+                dps.push({x: 1,y: 1*(tip_cost*students*tips_per_day*days_per_week*weeks_per_year)},{x: 2,y: 2*(tip_cost*students*tips_per_day*days_per_week*weeks_per_year)},{x: 3,y: 3*(tip_cost*students*tips_per_day*days_per_week*weeks_per_year)},{x: 4,y: 4*(tip_cost*students*tips_per_day*days_per_week*weeks_per_year)},{x: 5,y: 5*(tip_cost*students*tips_per_day*days_per_week*weeks_per_year)},{x: 6,y: 6*(tip_cost*students*tips_per_day*days_per_week*weeks_per_year)},{x: 7,y: 7*(tip_cost*students*tips_per_day*days_per_week*weeks_per_year)});
                 chart.render();
                 
-                ds.push({x: 1,y: 10500+((tip_cost+students+tips_per_day+days_per_week+weeks_per_year)/4)},{x: 2,y: 10500+(2*((tip_cost+students+tips_per_day+days_per_week+weeks_per_year)/4))},{x: 3,y: 10500+(3*((tip_cost+students+tips_per_day+days_per_week+weeks_per_year)/4))},{x: 4,y: 10500+(4*((tip_cost+students+tips_per_day+days_per_week+weeks_per_year)/4))},{x: 5,y: 10500+(5*((tip_cost+students+tips_per_day+days_per_week+weeks_per_year)/4))},{x: 6,y: 10500+(6*((tip_cost+students+tips_per_day+days_per_week+weeks_per_year)/4))},{x: 7,y: 10500+(7*((tip_cost+students+tips_per_day+days_per_week+weeks_per_year)/4))});
+                ds.push({x: 1,y: 10500+((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4)},{x: 2,y: 10500+(2*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))},{x: 3,y: 10500+(3*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))},{x: 4,y: 10500+(4*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))},{x: 5,y: 10500+(5*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))},{x: 6,y: 10500+(6*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))},{x: 7,y: 10500+(7*((tip_cost*students*tips_per_day*days_per_week*weeks_per_year)/4))});
                 chart.render();
             }
 
