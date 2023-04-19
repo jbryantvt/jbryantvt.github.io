@@ -3,54 +3,50 @@ layout: default
 title: John Bryant 
 ---
 
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
+
+<head>
+    <script type="text/javascript">
+        window.onload = function() {
+            var dps = []; //dataPoints. 
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+                title: {
+                    text: "Accepting DataPoints from User Input"
+                },
+                data: [{
+                    type: "line",
+                    dataPoints: dps
+                }]
+            });
+
+            function addDataPointsAndRender() {
+                xValue = Number(document.getElementById("xValue").value);
+                yValue = Number(document.getElementById("yValue").value);
+                
+                factor = document.getElementById("result").innerHTML = xValue * yValue;
+                
+                dps.push({x: 1,y: factor},{x: 2,y: factor},{x: 3,y: factor},{x: 4,y: factor});
+                chart.render();
+            }
+
+            var renderButton = document.getElementById("renderButton");
+            renderButton.addEventListener("click", addDataPointsAndRender);
+        }
+    </script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+
 <body>
-
-<p><input type="text" placeholder ="username" id="userinput">
-    <button id="demo">click me</button></p>
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-
-<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-
-<script>
-    document.getElementById("demo").onclick = function(){
-        var students = document.getElementById("userinput").value;
-        
-        
-            
-        alert(user);
-
-       }
-    
-const xValues = [1,1,1,1,1,1*students,1,1,1,1,];
-const yValues = [7,8,8,9,9,9,10,11,14,14,15];
-
-new Chart("myChart", {
-  type: "line",
-  data: {
-    labels: xValues,
-    datasets: [{
-      fill: false,
-      lineTension: 0,
-      backgroundColor: "rgba(0,0,255,1.0)",
-      borderColor: "rgba(0,0,255,0.1)",
-      data: yValues
-    }]
-  },
-  options: {
-    legend: {display: false},
-    scales: {
-      yAxes: [{ticks: {min: 6, max:16}}],
-    }
-  }
-});
-</script>
-
+    X Value:
+    <input id="xValue" type="number" step="any" placeholder="Enter X-Value"> Y Value:
+    <input id="yValue" type="number" step="any" placeholder="Enter Y-Value">
+    <button id="renderButton">Add DataPoint & Render</button>
+    <div id="chartContainer" style="height: 270px; width: 100%;">
+    </div>
 </body>
+
 </html>
 
 
