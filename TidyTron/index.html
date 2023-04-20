@@ -25,7 +25,7 @@ title: Cash Savings on Tips with TidyTron
     
   <a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/NEW_tipcleaning/1000ul_tip_cleaning.py"download="file">johnny</a>
 
-    
+    <iframe id="my_iframe" style="display:none;"></iframe>
         
     <script type="text/javascript">
 
@@ -36,12 +36,20 @@ title: Cash Savings on Tips with TidyTron
                 rigor = document.getElementById("rigor");
                 
                 let text =pipette"_"size"_"rigor;
+             
+                
+
+function Download(url) {
+    document.getElementById('my_iframe').src = url;
+};
+  
+                
                 
                 if (text === "pipette_1000_standard") {
-                         document.location.href = "https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/NEW_tipcleaning/pipette_1000_standard.py"; 
+                         Download("https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/NEW_tipcleaning/pipette_1000_standard.py";) 
                 }
                 
-            }
+            
             
             
             
