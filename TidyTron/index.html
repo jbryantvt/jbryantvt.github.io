@@ -23,59 +23,170 @@ title: Cash Savings on Tips with TidyTron
   
     
     
-  <a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/NEW_tipcleaning/1000ul_tip_cleaning.py"download="file">johnny</a>
+  <head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    <iframe id="my_iframe" style="display:none;"></iframe>
-        
-    <script type="text/javascript">
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
 
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
 
-            function addDataPointsAndRender() {
-                pipette = document.getElementById("pipette");
-                size = document.getElementById("size");
-                rigor = document.getElementById("rigor");
-                
-                let text =pipette"_"size"_"rigor;
-             
-                
+.btn:hover {
+  background-color: #ddd;
+}
 
-function Download(url) {
-    document.getElementById('my_iframe').src = url;
-};
-  
-                
-                
-                if (text === "pipette_1000_standard") {
-                         Download("https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/NEW_tipcleaning/pipette_1000_standard.py";) 
-                }
-                
-            
-            
-            
-            
-            
-            var renderButton = document.getElementById("renderButton");
-            renderButton.addEventListener("click", addDataPointsAndRender);
-        }
-    </script>
-    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
-
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+</style>
+</head>
 <body>
-    Pipette:
-    <input id="pipette" type="text" placeholder="pipette"> Size:
-    <input id="size" type="text" placeholder="1000">
-    Rigor:
-    <input id="rigor" type="text" placeholder="standard"> 
-    
-    
-    <button id="renderButton">Add DataPoint & Render</button>
-    <div id="chartContainer" style="height: 270px; width: 100%;">
-    </div>
 
+<h2>List View or Grid View</h2>
+
+<p>Click on a button to choose list view or grid view.</p>
+
+<div id="btnContainer">
+  <button class="btn" onclick="listView()"><i class="fa fa-bars"></i> List</button> 
+  <button class="btn active" onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+</div>
+<br>
+
+<div class="row">
+  <div class="column" style="background-color:#abc;">
+    <h2>Single-channel Cleaning Protocols</h2>
     
+  </div>
+  <div class="column" style="background-color:#adc;">
+    <h2>Multi-channel Cleaning Protocols</h2>
     
+  </div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>Microwell Plate</h2>
+    <p>Some text..</p>
+    <p>Some text..</p>
+    <p>Some text..</p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <h2>Microwell Plate</h2>
+    <p>Some text..</p>
+    <p>Some text..</p>
+    <p>Some text..</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#ccc;">
+    <h2>p10 single</h2>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p10/p10_Ecoliclean_1-2-1.py"download="file">E. coli Standard</a></p>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p10/p10_Ecoliclean_3-3-3.py"download="file">E. coli Thorough</a></p>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p10/p10_Ecoliclean_1-1.py"download="file">E. coli Quick</a></p>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p10/p10_DNAclean_neutralizers.py"download="file">DNA Neutralizers</a></p>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p10/p10_DNAclean_no_neuts.py"download="file">DNA NO Neutralizers</a></p>
+  </div>
+  
+  <div class="column" style="background-color:#ddd;">
+    <h2>p10 multi</h2>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p10/p10_Ecoliclean_1-2-1_multichan.py"download="file">E. coli Standard</a></p>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p10/p10_Ecoliclean_3-3-3_multichan.py"download="file">E. coli Thorough</a></p>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p10/p10_Ecoliclean_1-1_multichan.py"download="file">E. coli Quick</a></p>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p10/p10_DNAclean_neutralizers_multichan.py"download="file">DNA Neutralizers</a></p>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p10/p10_DNAclean_no_neuts_multichan.py"download="file">DNA NO Neutralizers</a></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>p300 single</h2>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p300/p300_Ecoliclean_1-2-1.py"download="file">E. coli Standard</a></p>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p300/p300_Ecoliclean_3-3-3.py"download="file">E. coli Thorough</a></p>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p300/p300_Ecoliclean_1-1.py"download="file">E. coli Quick</a></p>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p300/p300_DNAclean_neutralizers.py"download="file">DNA Neutralizers</a></p>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p300/p300_DNAclean_no_neuts.py"download="file">DNA NO Neutralizers</a></p>
+  </div>
+  
+  <div class="column" style="background-color:#bbb;">
+    <h2>p300 multi</h2>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p300/p300_Ecoliclean_1-2-1_multichan.py"download="file">E. coli Standard</a></p>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p300/p300_Ecoliclean_3-3-3_multichan.py"download="file">E. coli Thorough</a></p>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p300/p300_Ecoliclean_1-1_multichan.py"download="file">E. coli Quick</a></p>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p300/p300_DNAclean_neutralizers_multichan.py"download="file">DNA Neutralizers</a></p>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p300/p300_DNAclean_no_neuts_multichan.py"download="file">DNA NO Neutralizers</a></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#bcd;">
+    <h2>p1000 single</h2>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p300/p300_Ecoliclean_1-2-1_multichan.py"download="file">E. coli Standard</a></p>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p300/p300_Ecoliclean_1-2-1_multichan.py"download="file">E. coli Standard</a></p>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p300/p300_Ecoliclean_1-2-1_multichan.py"download="file">E. coli Standard</a></p>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p300/p300_Ecoliclean_1-2-1_multichan.py"download="file">E. coli Standard</a></p>
+    <p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PlantSynBioLab/opentrons-sustainability/blob/main/scripts/p300/p300_Ecoliclean_1-2-1_multichan.py"download="file">E. coli Standard</a></p>
+  </div>
+  
+  
+  
+  
+</div>
+
+<script>
+// Get the elements with class="column"
+var elements = document.getElementsByClassName("column");
+
+// Declare a loop variable
+var i;
+
+// List View
+function listView() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.width = "100%";
+  }
+}
+
+// Grid View
+function gridView() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.width = "50%";
+  }
+}
+
+/* Optional: Add active class to the current button (highlight it) */
+var container = document.getElementById("btnContainer");
+var btns = container.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
 </body>
-
 </html>
-
